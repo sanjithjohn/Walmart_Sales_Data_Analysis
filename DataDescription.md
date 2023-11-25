@@ -6,7 +6,7 @@ The main purpose of this project is to gain insight into the sales data of Walma
 
 ## About Data
 
-The dataset was obtained from [Kaggle](https://www.kaggle.com). This dataset contains sales transactions from a three different branches of Walmart, respectively located in Mandalay, Yangon and Naypyitaw. The data contains 17 columns and 1000 rows:
+The dataset was obtained from [Kaggle](https://www.kaggle.com). This dataset contains sales transactions from a three different branches of Walmart, respectively located in Lincoln, Salina and Witchita. The data contains 15 columns and 1000 rows:
 
 | Column                  | Description                             | Data Type      |
 | :---------------------- | :-------------------------------------- | :------------- |
@@ -23,7 +23,7 @@ The dataset was obtained from [Kaggle](https://www.kaggle.com). This dataset con
 | date                    | The date on which the purchase was made | DATE           |
 | time                    | The time at which the purchase was made | TIMESTAMP      |
 | payment_method          | The total amount paid                   | DECIMAL(10, 2) |
-| cgs                     | Cost Of Goods sold                      | DECIMAL(10, 2) |
+| CGS                     | Cost Of Goods sold                      | DECIMAL(10, 2) |
 | rating                  | Rating                                  | FLOAT(2, 1)    |
 
 ### Analysis List
