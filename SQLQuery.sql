@@ -122,10 +122,10 @@ GROUP BY MONTH
 
 --5) What month had the largest COGS?
 
-SELECT TOP 1 MONTH, [COGS PER MONTH] FROM
-	(SELECT MONTH, SUM(COGS) AS [COGS PER MONTH] FROM WalmartSalesData#csv$
+SELECT TOP 1 MONTH, [CGS PER MONTH] FROM
+	(SELECT MONTH, SUM(COGS) AS [CGS PER MONTH] FROM WalmartSalesData#csv$
 	GROUP BY MONTH ) AS subquery
-ORDER BY [COGS PER MONTH] DESC
+ORDER BY [CGS PER MONTH] DESC
 
 --6) What product line had the largest revenue?
 
@@ -144,15 +144,15 @@ ORDER BY REVENUE DESC
 
 --8) What product line had the largest VAT?
 
-SELECT TOP 1 [product line] , [Tax 5%] FROM WalmartSalesData#csv$
-ORDER BY [Tax 5%] DESC
+SELECT TOP 1 [product line] , VAT FROM WalmartSalesData#csv$
+ORDER BY VAT DESC
 
 --9) Fetch each product line and add a column to those 
 --product line showing "Good", "Bad". Good if its greater than average sales
 
 
  SELECT [product line] ,
-   CASE WHEN total < (SELECT AVG(TOTAL) FROM WalmartSalesData#csv$)
+   CASE WHEN total < (SELECT AVG([Total Sales]) FROM WalmartSalesData#csv$)
 				THEN 'BAD'
 	ELSE 'GOOD'
 	END
@@ -206,17 +206,17 @@ ORDER BY Day_Name, Day_Time ASC
 
 --2) Which of the customer types brings the most revenue?
 
-SELECT TOP 1 [CUSTOMER TYPE] , SUM(total) FROM WalmartSalesData#csv$
+SELECT TOP 1 [CUSTOMER TYPE] , SUM([total sales]) FROM WalmartSalesData#csv$
 GROUP BY [Customer type]
 
 --3) Which city has the largest tax percent/ VAT (Value Added Tax)?
 
-SELECT TOP 1 City , SUM([Tax 5%]) FROM WalmartSalesData#csv$
+SELECT TOP 1 City , SUM(VAT) FROM WalmartSalesData#csv$
 GROUP BY City 
 
 --4) Which customer type pays the most in VAT?
 
-SELECT TOP 1 [CUSTOMER TYPE] , SUM([Tax 5%]) FROM WalmartSalesData#csv$
+SELECT TOP 1 [CUSTOMER TYPE] , SUM(VAT) FROM WalmartSalesData#csv$
 GROUP BY [Customer type]
 
 
